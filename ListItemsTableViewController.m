@@ -1,6 +1,6 @@
 
 //
-//  ListItemSTableViewController.m
+//  ListItemsTableViewController.m
 //  Lists
 //
 //  Created by Ryan Cortez on 6/28/16.
@@ -15,9 +15,8 @@
 #pragma mark - View Lifecycle
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.tableView.allowsMultipleSelectionDuringEditing = NO;
     self.navigationItem.title = [_lists[self.index] title];
-    [self.tableView reloadData];
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
 }
 
 #pragma mark - Saving Content

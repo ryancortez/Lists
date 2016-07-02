@@ -107,7 +107,7 @@
     List *list = _lists[indexPath.row];
     NSString *cellText = list.title;
     
-    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:18.0];
+    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:20.0];
     
     NSAttributedString *attributedText =
     [[NSAttributedString alloc]
