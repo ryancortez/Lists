@@ -71,10 +71,13 @@
 
 // Create each cell for the table view
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *listCell = [tableView dequeueReusableCellWithIdentifier:@"ListCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListCell"];
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.numberOfLines = 0;
+    [cell.textLabel setFont:[UIFont systemFontOfSize:20]];
     List *list = _lists[indexPath.row];
-    listCell.textLabel.text = list.title;
-    return listCell;
+    cell.textLabel.text = list.title;
+    return cell;
 }
 
 // Return the number of rows that should be in the table
@@ -96,6 +99,27 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         [self saveListsToUserDefault];
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Create height based off of how many lines of text are added to the cell content
+    List *list = _lists[indexPath.row];
+    NSString *cellText = list.title;
+    
+    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:18.0];
+    
+    NSAttributedString *attributedText =
+    [[NSAttributedString alloc]
+     initWithString:cellText
+     attributes:@
+     {
+     NSFontAttributeName: cellFont
+     }];
+    CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX)
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                               context:nil];
+    return rect.size.height + 50;
 }
 
 #pragma mark - Segues
