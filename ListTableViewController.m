@@ -13,6 +13,7 @@
 #pragma View Lifecycle
 
 - (void)viewWillAppear:(BOOL)animated {
+    
     self.navigationItem.title = @"Lists";
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
     [self checkForIntialLaunch];

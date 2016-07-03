@@ -12,6 +12,7 @@
 
 @implementation ListItemsTableViewController
 
+
 #pragma mark - View Lifecycle
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -52,10 +53,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListItemCell"];
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.numberOfLines = 0;
-    [cell.textLabel setFont:[UIFont systemFontOfSize:19]];
+    [cell.textLabel setFont:[UIFont systemFontOfSize:20]];
     List *list = _lists[self.index];
     ListItem *listItem = list.listItems[indexPath.row];
     cell.textLabel.text = listItem.title;
+    
     return cell;
 }
 
@@ -87,7 +89,7 @@
     ListItem *listItem = list.listItems[indexPath.row];
     NSString *cellText = listItem.title;
     
-    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:19.0];
+    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:20.0];
     
     NSAttributedString *attributedText =
     [[NSAttributedString alloc]
@@ -99,7 +101,8 @@
     CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX)
                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                context:nil];
-    return rect.size.height + 40;
+
+    return rect.size.height + 40.0;
 }
 
 #pragma mark - Segue
