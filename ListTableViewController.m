@@ -36,7 +36,7 @@
 
 // Create a default collection of lists
 - (void) initViewWithDefaultValues {
-    List *tutorialList = [[List alloc]initWithTitle:@"My To-Do List" andListItemTitles:[NSArray arrayWithObjects:@"Learn how to use Lists", @"Tap the Edit button and add a few items", @"Swipe left on this item, and tap Delete", nil]];
+    List *tutorialList = [[List alloc]initWithTitle:@"To-Do List" andListItemTitles:[NSArray arrayWithObjects:@"Learn how to use Lists", @"Tap the Edit button and add a few items", @"Swipe left on this item, and tap Delete", nil]];
     List *shoppingList = [[List alloc]initWithTitle:@"Shopping List" andListItemTitles:[NSArray arrayWithObjects:@"Milk", @"Bread", @"Eggs", nil]];
     NSMutableArray *categoriesArray = [[NSMutableArray alloc]initWithObjects:tutorialList, shoppingList, nil];
     _lists = categoriesArray;

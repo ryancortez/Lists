@@ -119,7 +119,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lists" id="ba7-bh-GIv">
-                        <barButtonItem key="backBarButtonItem" title="Groceries" id="weP-51-D7A"/>
+                        <barButtonItem key="backBarButtonItem" title="Lists" id="weP-51-D7A"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ONL-R2-DCc">
                             <connections>
                                 <segue destination="xDP-CP-hZf" kind="presentation" identifier="listTableViewToAddListTableViewSegue" id="j3w-oq-qbN"/>
