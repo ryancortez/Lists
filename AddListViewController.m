@@ -17,8 +17,9 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     numberOfListItemCellsAddedByTheUser = 0;
-    numberOfListItemCellsAddedWhenViewLoads = 3;
-    _list = [[List alloc]initWithTitle:@""];
+    numberOfListItemCellsAddedWhenViewLoads = 1;
+    NSMutableArray *mutableArray = [[NSMutableArray alloc]init];
+    _list = [[List alloc]initWithTitle:@"" andListItems:mutableArray];
 }
 
 #pragma mark - TableView DataSource
@@ -114,7 +115,9 @@
         TextFieldTableViewCell *textFieldTableViewCell = [self.tableView cellForRowAtIndexPath:indexPath];
         if (![textFieldTableViewCell.textField.text isEqual: @""]) {
             ListItem *listItem = [[ListItem alloc]initWithTitle:textFieldTableViewCell.textField.text];
+            
             _list.listItems[index] = listItem;
+            
         }
     }
 }
