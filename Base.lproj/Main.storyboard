@@ -25,7 +25,7 @@
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9rX-c3-t1i">
                                             <rect key="frame" x="8" y="0.0" width="584" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                             <connections>
                                                 <outlet property="delegate" destination="oFp-w6-PXA" id="isi-OZ-jw2"/>
                                             </connections>
@@ -52,7 +52,7 @@
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gzG-P7-hLm">
                                             <rect key="frame" x="8" y="0.0" width="584" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                             <connections>
                                                 <outlet property="delegate" destination="oFp-w6-PXA" id="Jda-dw-ygJ"/>
                                             </connections>
@@ -159,7 +159,7 @@
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="r5F-ra-8Iz">
                                             <rect key="frame" x="8" y="0.0" width="584" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                             <connections>
                                                 <outlet property="delegate" destination="orY-ax-4oo" id="tqh-xc-jHS"/>
                                             </connections>
@@ -186,7 +186,7 @@
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-WY-vFS">
                                             <rect key="frame" x="8" y="0.0" width="584" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                             <connections>
                                                 <outlet property="delegate" destination="orY-ax-4oo" id="MLY-ow-NRl"/>
                                             </connections>

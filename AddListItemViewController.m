@@ -85,8 +85,11 @@
 
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    [self saveButtonPressed:self];
+    // When the return button is press, go the next tableViewCell
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)textField.superview.superview];
+    indexPath = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:indexPath.section];
+    TextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [cell.textField becomeFirstResponder];
     return YES;
 }
 
