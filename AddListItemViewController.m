@@ -15,6 +15,8 @@
 
 
 -(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     numberOfCellsAddedByTheUser = 0;
     numberOfCellsAddedWhenViewLoads = 1;
     List *list = _lists[self.index];

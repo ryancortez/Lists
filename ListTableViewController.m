@@ -13,6 +13,7 @@
 #pragma View Lifecycle
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     self.navigationItem.title = @"Lists";
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
@@ -121,6 +122,13 @@
                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                context:nil];
     return rect.size.height + 50;
+}
+
+#pragma mark - Actions
+
+
+// When the Reorder Button is pressed
+- (IBAction)reorderButtonTouchUp:(id)sender {
 }
 
 #pragma mark - Segues

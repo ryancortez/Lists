@@ -22,6 +22,7 @@
     [[UINavigationBar appearance] setBarStyle: UIBarStyleBlack];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+    [[UIToolbar appearance] setBarTintColor:[UIColor orangeColor]];
     
     return YES;
 }

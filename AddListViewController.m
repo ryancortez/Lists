@@ -16,6 +16,8 @@
 #pragma mark - ViewController Lifecycle
 
 -(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     numberOfListItemCellsAddedByTheUser = 0;
     numberOfListItemCellsAddedWhenViewLoads = 1;
     NSMutableArray *mutableArray = [[NSMutableArray alloc]init];

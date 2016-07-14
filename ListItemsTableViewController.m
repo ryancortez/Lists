@@ -16,6 +16,8 @@
 #pragma mark - View Lifecycle
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     self.navigationItem.title = [_lists[self.index] title];
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
 }
