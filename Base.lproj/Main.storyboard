@@ -75,20 +75,19 @@
                             <outlet property="delegate" destination="oFp-w6-PXA" id="V4R-ft-KJb"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem systemItem="cancel" id="u19-Ed-irR">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hxH-yd-PuL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="u19-Ed-irR">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="oFp-w6-PXA" id="Jvo-IY-ExF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ni2-GT-Bgl"/>
-                        <barButtonItem systemItem="save" id="19b-ee-GXL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="19b-ee-GXL">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="oFp-w6-PXA" id="vOv-q3-mEw"/>
                             </connections>
                         </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="hxH-yd-PuL"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPC-HU-M9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,20 +209,19 @@
                             <outlet property="delegate" destination="orY-ax-4oo" id="dVs-ub-glM"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem systemItem="cancel" id="M6M-7g-iED">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="DNN-fz-4zU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="M6M-7g-iED">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="orY-ax-4oo" id="5A7-td-bgd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="hAN-2s-wHf"/>
-                        <barButtonItem systemItem="save" id="9vu-1A-695">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9vu-1A-695">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="orY-ax-4oo" id="ucJ-qK-vew"/>
                             </connections>
                         </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="DNN-fz-4zU"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuj-8z-Luo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -296,7 +294,7 @@
         <!--Navigation Controller-->
         <scene sceneID="U83-oc-FJy">
             <objects>
-                <navigationController storyboardIdentifier="AddGroceryItemView" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="8kz-re-WkH" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddGroceryItemView" automaticallyAdjustsScrollViewInsets="NO" id="8kz-re-WkH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VxY-LR-7Rr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -318,7 +316,7 @@
         <!--Navigation Controller-->
         <scene sceneID="iZX-Dd-5pg">
             <objects>
-                <navigationController storyboardIdentifier="AddGroceryCategoryView" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="xDP-CP-hZf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddGroceryCategoryView" automaticallyAdjustsScrollViewInsets="NO" id="xDP-CP-hZf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iMj-8T-y6m">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
