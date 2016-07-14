@@ -79,8 +79,15 @@
 }
 
 - (void) textFieldWasTapped: (UITextField *) textField {
-    [textField removeTarget:self action:@selector(textFieldWasTapped:) forControlEvents:UIControlEventEditingDidBegin];
-    [self insertRowInTable];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)textField.superview.superview];
+    indexPath = [NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section];
+    TextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    // If there is text in the previous cell add a new cell
+    if (![cell.textField.text isEqual: @""]) {
+        [textField removeTarget:self action:@selector(textFieldWasTapped:) forControlEvents:UIControlEventEditingDidBegin];
+        [self insertRowInTable];
+    }
 }
 
 
