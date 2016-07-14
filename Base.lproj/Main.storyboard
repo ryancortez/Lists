@@ -249,7 +249,11 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Reorder" style="plain" id="LLe-DG-PBg"/>
+                        <barButtonItem title="Reorder" style="plain" id="LLe-DG-PBg">
+                            <connections>
+                                <action selector="reorderButtonTouchUp:" destination="7g0-ju-QsR" id="i8I-gu-fKo"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="SVK-ev-3Lb"/>
                         <barButtonItem systemItem="edit" id="okW-wx-BFf">
                             <connections>

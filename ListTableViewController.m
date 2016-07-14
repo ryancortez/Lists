@@ -145,9 +145,9 @@
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
     List *list = [[List alloc]init];
     list = _lists[sourceIndexPath.row];
-    
     [_lists removeObjectAtIndex:sourceIndexPath.row];
     [_lists insertObject:list atIndex:destinationIndexPath.row];
+    [self saveListsToUserDefault];
 }
 
 #pragma mark - Actions

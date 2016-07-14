@@ -107,6 +107,48 @@
     return rect.size.height + 40.0;
 }
 
+// Sets the icons to the left of the cell when tableview is being edited
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.editing == NO && !indexPath) {
+        return  UITableViewCellEditingStyleNone;
+    }
+    if (self.editing && indexPath.row == _list.listItems.count) {
+        return UITableViewCellEditingStyleInsert;
+    } else {
+        return UITableViewCellEditingStyleDelete;
+    }
+}
+
+// Set what cell are able to be reordered
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+// Update the model when the cells are rearranged
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    
+    List *list = _lists[self.index];
+    ListItem *listItem = [[ListItem alloc]init];
+    listItem = list.listItems[sourceIndexPath.row];
+    [list.listItems removeObjectAtIndex:sourceIndexPath.row];
+    [list.listItems insertObject:listItem atIndex:destinationIndexPath.row];
+    [self saveListsToUserDefault];
+    
+}
+
+- (IBAction)reorderButtonTouchUp:(UIBarButtonItem *) reorderButton {
+    if (self.tableView.isEditing) {
+        [self.tableView setEditing:NO animated:YES];
+        reorderButton.style = UIBarButtonItemStylePlain;
+        reorderButton.title = @"Reorder";
+    }
+    else {
+        [self.tableView setEditing:YES animated:YES];
+        reorderButton.style = UIBarButtonItemStyleDone;
+        reorderButton.title = @"Done";
+    }
+}
+
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
