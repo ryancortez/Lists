@@ -2,4 +2,4 @@
 ===================
 *A simple iOS App that locally stores textual based lists.*
 
-![](http://ryancortez.com/public_html/List-EditListItem-GIF.gif)
+![](http://ryancortez.com/List-EditListItem-GIF.gif)
