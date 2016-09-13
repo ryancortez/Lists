@@ -30,10 +30,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == 0) {
         TextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldTableViewCell"];
-        [cell.textField setPlaceholder: @"Add a list name"];
+        cell.textField.text = nil;
+        if (_list.title) {
+            cell.textField.text = _list.title;
+        } else {
+            cell.textField.text = nil;
+        }
+        [cell.textField setPlaceholder: @"List name"];
         return cell;
     } else if (indexPath.section == 1) {
         TextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldTableViewCell"];
+        cell.textField.text = nil;
+        if (_list.listItems.count > indexPath.row) {
+            if (_list.listItems[indexPath.row] != nil) {
+                cell.textField.text = [_list.listItems[indexPath.row] title];
+            } else {
+                cell.textField.text = nil;
+            }
+        }
         cell.textField.placeholder = @"Add a list item";
         [cell.textField addTarget:self
                            action:@selector(textFieldWasTapped:)
@@ -73,6 +87,9 @@
 
 - (void) textFieldWasTapped: (UITextField *) textField {
     
+    [self saveCategoryTitleFromTextFieldTableViewCellContent];
+    [self saveContentFromTextFieldsIntoList];
+    
     NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)textField.superview.superview];
     indexPath = [NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section];
     TextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -82,6 +99,11 @@
         [textField removeTarget:self action:@selector(textFieldWasTapped:) forControlEvents:UIControlEventEditingDidBegin];
         [self insertRowInTable];
     }
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    [self saveCategoryTitleFromTextFieldTableViewCellContent];
+    [self saveContentFromTextFieldsIntoList];
 }
 
 // Triggered when the return button is pressed
@@ -117,7 +139,9 @@
 - (void) saveCategoryTitleFromTextFieldTableViewCellContent {
     NSIndexPath *categoryTitleIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     TextFieldTableViewCell *textFieldTableViewCell = [self.tableView cellForRowAtIndexPath:categoryTitleIndexPath];
-    _list.title = textFieldTableViewCell.textField.text;
+    if (![textFieldTableViewCell.textField.text isEqual: @""] && textFieldTableViewCell.textField.text != nil) {
+        _list.title = textFieldTableViewCell.textField.text;
+    }
 }
 
 // Get the content add by the user in the list item text fields
@@ -127,9 +151,10 @@
     for (int index = 0; index < tableViewCellCount; index++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:1];
         TextFieldTableViewCell *textFieldTableViewCell = [self.tableView cellForRowAtIndexPath:indexPath];
-        if (![textFieldTableViewCell.textField.text isEqual: @""]) {
-            ListItem *listItem = [[ListItem alloc]initWithTitle:textFieldTableViewCell.textField.text];
+        
+        if (![textFieldTableViewCell.textField.text isEqual: @""] && textFieldTableViewCell.textField.text != nil) {
             
+            ListItem *listItem = [[ListItem alloc]initWithTitle:textFieldTableViewCell.textField.text];
             _list.listItems[index] = listItem;
             
         }
