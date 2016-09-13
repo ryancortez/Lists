@@ -152,7 +152,7 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:1];
         TextFieldTableViewCell *textFieldTableViewCell = [self.tableView cellForRowAtIndexPath:indexPath];
         
-        if (![textFieldTableViewCell.textField.text isEqual: @""] && textFieldTableViewCell.textField.text != nil) {
+        if (textFieldTableViewCell.textField.text != nil) {
             
             ListItem *listItem = [[ListItem alloc]initWithTitle:textFieldTableViewCell.textField.text];
             _list.listItems[index] = listItem;
